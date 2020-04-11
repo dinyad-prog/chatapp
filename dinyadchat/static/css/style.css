@@ -1,0 +1,24 @@
+body {
+	color: green;
+	background-color: white;
+	text-align: center;
+}
+
+form {
+	position: absolute ;
+top: 150px;
+left : 450px;
+width : 500px;
+margin: 0 0 0 - 250px;
+padding : 0;
+text-align: left;
+}
+
+fieldset{
+	background-color: green;
+}
+
+.nonaff {
+display: none;
+
+}
