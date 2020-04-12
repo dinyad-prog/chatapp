@@ -42,3 +42,4 @@ def connexion(request):
 		return render_to_response('dinyadchat/connexion.html',{"form":form})
 
 # Create your views here.
+
