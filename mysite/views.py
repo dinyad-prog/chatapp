@@ -35,7 +35,7 @@ def connexion(request):
 		if form.is_valid():
 			return HttpResponseRedirect('/welcome')
 		else:
-			form=loginF()
+			
 			return render_to_response('dinyadchat/connexion.html',{"form":form})
 	else:
 		form=loginF()
