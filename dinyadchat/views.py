@@ -26,7 +26,7 @@ def register(request):
 			return HttpResponseRedirect ('/connexion')
 
 		else :
-			form = profileF()
+			
 			return render_to_response ('dinyadchat/register.html',{'form' : form})
 	else :
 		form = profileF()
@@ -38,7 +38,7 @@ def connexion(request):
 		if form.is_valid():
 			return HttpResponseRedirect('/welcome')
 		else:
-			form=loginF()
+			
 			return render_to_response('dinyadchat/connexion.html',{"form":form})
 	else:
 		form=loginF()
