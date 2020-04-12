@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from datetime import datetime
 from django.http import HttpResponseRedirect
-from forms import *
+from dinyadchat.forms import *
 
 def welcome(request):
 	return render(request,'dinyadchat/welcome.html',{})
