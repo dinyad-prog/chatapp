@@ -2,6 +2,11 @@ body {
 	color: green;
 	background-color: white;
 	text-align: center;
+	font-family: 'Lobster';
+}
+
+p {
+	font-family: 'Lobster';
 }
 
 form {
