@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from datetime import datetime
 from django.http import HttpResponseRedirect
 from dinyadchat.forms import *
+import os
+
+
 
 def welcome(request):
 	return render(request,'dinyadchat/welcome.html',{})
@@ -20,7 +23,7 @@ def register(request):
 			etud=personne(nom=nom,prenom=prenom,pseudo=pseudo,pwd=pwd)
 			etud.save()
 
-			return HttpResponseRedirect ('/welcome')
+			return HttpResponseRedirect ('/connexion')
 
 		else :
 			form = profileF()

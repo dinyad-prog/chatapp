@@ -14,7 +14,7 @@ class loginF(forms.Form):
         pseudo=cleaned_data.get("pseudo")
         pwd=cleaned_data.get("pwd")
         if pseudo and pwd:
-            result=personne.object.filter(pseudo=pseudo,pwd=pwd)
+            result=personne.objects.filter(pseudo=pseudo,pwd=pwd)
             if len(result)!=1:
                 raise forms.ValidationError("Pseudo ou mot de passe incorrect.")
 
