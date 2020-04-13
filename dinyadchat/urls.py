@@ -7,4 +7,6 @@ urlpatterns = [
     url(r'^welcome/',welcome),
     url(r'^register/',register),
     url(r'^connexion/',connexion),
+    url(r'^home/',home),
+    
 ]

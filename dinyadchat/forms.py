@@ -19,3 +19,8 @@ class loginF(forms.Form):
                 raise forms.ValidationError("Pseudo ou mot de passe incorrect.")
 
         return cleaned_data
+
+class messageF(forms.ModelForm):
+    class Meta:
+        model=message
+        exclude=('recpt','date','auteur',)

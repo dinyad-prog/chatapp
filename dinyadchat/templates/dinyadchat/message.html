@@ -3,20 +3,30 @@
 <!DOCTYPE ht ml> 
 <html xm1ns="http://www.w3.org/1999/xhtm1"> 
 	<head> 
-		<title>Dinyad Chat</title> 
+		<title>Gestions de Classes</title> 
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css" >
 		<link rel="stylesheet"  href="{% static 'css/style.css' %}">
 	</head> 
 	<body> 
-		<h1>Bienvenu DinyadChat</h1> 
-
+		<header>
+			<h1>Bienvenu Sur DinyadChat</h1>
+			<h2>{{ logged_user.nom }} {{ logged_user.prenom }}</h2>
+		</header>
 		<fieldset>
 		</fieldset>
-		<p><img src="/static/img/aaa.png"></P> 
-		<h1><a  href="/connexion">Connexion</a></h1>
-		<h1><a  href="/register">Inscription</a></h1> 
+
+		{{ ami.nom }} {{ ami.prenom }}</br>
+		<form method="post" action="connexion">
+			{{ form.as_p }}
+			<p>
+				<input type="submit" name="ok" value="Envoyer">
+			</P>
+			<p>
+				<input type="hidden" name="ami" value="{{ami.id}}">
+			</P>
+		</for> 	
 		
 	</body> 
 </htmh>

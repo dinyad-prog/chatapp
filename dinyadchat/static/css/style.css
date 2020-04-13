@@ -5,6 +5,30 @@ body {
 	font-family: 'Lobster';
 }
 
+ul#personnes{
+	text-align: left;
+	float: right;
+}
+
+ul#amis{
+	text-align: left;
+	float: left;	
+}
+
+#am_ms{
+	text-decoration: none;
+}
+
+#ajouter{
+	float: right;
+}
+
+header{
+	color: white;
+	background-color: blue;
+	border: 2px red;
+}
+
 p {
 	font-family: 'Lobster';
 }
