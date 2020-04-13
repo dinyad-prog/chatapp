@@ -4,7 +4,7 @@ from dinyadchat.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^welcome/',welcome),
+    url(r'^yeto/',welcome),
     url(r'^register/',register),
     url(r'^connexion/',connexion),
     url(r'^home/',home),
