@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^register/',register),
     url(r'^connexion/',connexion),
     url(r'^home/',home),
+    url(r'^messag/',messag),
     
 ]

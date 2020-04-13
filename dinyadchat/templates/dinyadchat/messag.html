@@ -1,6 +1,6 @@
 {% load static %}
 <?xm 1 version="1.O" encoding="UTF-8" ?> 
-<!DOCTYPE ht ml> 
+<!DOCTYPE html> 
 <html xm1ns="http://www.w3.org/1999/xhtm1"> 
 	<head> 
 		<title>Gestions de Classes</title> 
@@ -17,16 +17,21 @@
 		<fieldset>
 		</fieldset>
 
-		{{ ami.nom }} {{ ami.prenom }}</br>
-		<form method="post" action="connexion">
-			{{ form.as_p }}
+		{{ ami.nom }} {{ ami.prenom }}
+	   </br>
+		<form method="post" action="messag">
+			<p>
+				<label for="contenu">Message</label>
+				<input type="text" name="contenu" id="contenu">
+			</P>
+			<p>
+				<input type="hidden" name="am" value="{{ami.id}}">
+			</P>
 			<p>
 				<input type="submit" name="ok" value="Envoyer">
 			</P>
-			<p>
-				<input type="hidden" name="ami" value="{{ami.id}}">
-			</P>
-		</for> 	
+			
+		</form> 	
 		
 	</body> 
 </htmh>

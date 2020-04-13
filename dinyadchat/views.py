@@ -23,6 +23,8 @@ def register(request):
 			pwd=form.cleaned_data['pwd']
 			etud=personne(nom=nom,prenom=prenom,pseudo=pseudo,pwd=pwd)
 			etud.save()
+			recpt=recepteur(recpt=etud)
+			recpt.save()
 
 			return HttpResponseRedirect ('/connexion')
 
@@ -53,7 +55,8 @@ def home(request):
 		logged_user_id=request.session['logged_user_id']
 		logged_user=personne.objects.get(id=logged_user_id)
 		personnes=personne.objects.all()
-		messages=logged_user.message_set.all()
+		recpt=recepteur.objects.get(recpt=logged_user)
+		messages=message.objects.filter(recpt=recpt)
 
 		if 'ajouter' in request.GET:
 			logged_user_id=request.session['logged_user_id']
@@ -72,6 +75,25 @@ def home(request):
 		return HttpResponseRedirect('/connexion')
 
 
+def messag(request):
+	if 'contenu' in request.POST and 'am' in request.POST:
+		
+		logged_user_id=request.session['logged_user_id']
+		logged_user=personne.objects.get(id=logged_user_id)
+		am=request.POST['am']
+		ami=personne.objects.get(id=am)
+		recpt=recepteur.objects.get(recpt=ami)
+		recpt.save()
+		m=message(contenu=request.POST['contenu'],auteur=logged_user,recpt=recpt)
+		m.save()
+		return render_to_response('dinyadchat/messag.html',{"logged_user":logged_user,"ami":ami})
+		
+	elif 'logged_user_id' in request.session:
+		logged_user_id=request.session['logged_user_id']
+		logged_user=personne.objects.get(id=logged_user_id)
+		am=request.GET['ami']
+		ami=personne.objects.get(id=am)
+		return render_to_response('dinyadchat/messag.html',{"logged_user":logged_user,"ami":ami})
 
 
 # Create your views here.

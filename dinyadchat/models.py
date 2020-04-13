@@ -16,6 +16,8 @@ class personne(models.Model):
 class recepteur(models.Model):
 	recpt=models.ForeignKey(personne,on_delete=models.CASCADE)
 
+	
+
 
 class message(models.Model):
 	contenu=models.TextField()
