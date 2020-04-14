@@ -4,14 +4,15 @@
 <html xm1ns="http://www.w3.org/1999/xhtm1"> 
 	<head> 
 		<title>Gestions de Classes</title> 
-		<link rel="stylesheet"  href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" link  href="/static/css/style.css">
 	</head> 
 	<body> 
-		 
+		 	<header>
 			<h1>Bienvenu Sur DinyadChat</h1>
 			<h2>Inscription</h2> 
+			</header>
 			<fieldset>
-			</fieldset>	
+			
 			<form method="get" action="register">
 				{{ form.as_p }}
 				<span id="cl" class="cl">
@@ -20,7 +21,7 @@
 					<input type="submit" name="ok" value="S'inscrire">
 				</P>
 			</form> 
-			
+			</fieldset>
 		
 	</body> 
 </htmh>

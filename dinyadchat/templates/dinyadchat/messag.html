@@ -11,15 +11,28 @@
 	</head> 
 	<body> 
 		<header>
-			<h1>Bienvenu Sur DinyadChat</h1>
-			<h2>{{ logged_user.nom }} {{ logged_user.prenom }}</h2>
+			<h3>{{ ami.nom }} {{ ami.prenom }}</h3>
+			
 		</header>
 		<fieldset>
-		</fieldset>
 
-		{{ ami.nom }} {{ ami.prenom }}
+			
+			</br>
+
+		{% for moi in moi_messages %}
+		{% for lui in lui_messages %}
+		{% n=0 %}
+			<fieldset id="droit">
+			{{moi}}
+			</fieldset>
+			<fieldset id="gauche">
+			{{lui}}
+			</fieldset>
+		{% endfor %}
+		{% endfor %}
+		
 	   </br>
-		<form method="post" action="messag">
+		<form method="post" action="messag" id="form_mess">
 			<p>
 				<label for="contenu">Message</label>
 				<input type="text" name="contenu" id="contenu">
@@ -31,7 +44,8 @@
 				<input type="submit" name="ok" value="Envoyer">
 			</P>
 			
-		</form> 	
+		</form> 
+		</fieldset>	
 		
 	</body> 
 </htmh>

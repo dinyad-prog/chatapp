@@ -26,9 +26,6 @@ class message(models.Model):
 	recpt=models.ForeignKey(recepteur,on_delete=models.CASCADE)
 
 	def __unicode__(self):
-		if len(self.contenu) > 20:
-			return self.contenu[:19]+"..."
-		else:
 			return self.contenu
 
 # Create your models here.

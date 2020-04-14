@@ -76,7 +76,7 @@ def home(request):
 
 
 def messag(request):
-	if 'contenu' in request.POST and 'am' in request.POST:
+	if 'contenu' in request.POST and 'am' in request.POST and request.POST['contenu']!='':
 		
 		logged_user_id=request.session['logged_user_id']
 		logged_user=personne.objects.get(id=logged_user_id)
@@ -86,14 +86,22 @@ def messag(request):
 		recpt.save()
 		m=message(contenu=request.POST['contenu'],auteur=logged_user,recpt=recpt)
 		m.save()
-		return render_to_response('dinyadchat/messag.html',{"logged_user":logged_user,"ami":ami})
+		moi=recepteur.objects.get(recpt=logged_user)
+		lui=recepteur.objects.get(recpt=ami)
+		moi_messages=message.objects.filter(recpt=lui,auteur=logged_user)
+		lui_messages=message.objects.filter(recpt=moi,auteur=ami)
+		return render_to_response('dinyadchat/messag.html',{"logged_user":logged_user,"ami":ami,"moi_messages":moi_messages,"lui_messages":lui_messages})
 		
 	elif 'logged_user_id' in request.session:
 		logged_user_id=request.session['logged_user_id']
 		logged_user=personne.objects.get(id=logged_user_id)
 		am=request.GET['ami']
 		ami=personne.objects.get(id=am)
-		return render_to_response('dinyadchat/messag.html',{"logged_user":logged_user,"ami":ami})
+		moi=recepteur.objects.get(recpt=logged_user)
+		lui=recepteur.objects.get(recpt=ami)
+		moi_messages=message.objects.filter(recpt=lui,auteur=logged_user)
+		lui_messages=message.objects.filter(recpt=moi,auteur=ami)
+		return render_to_response('dinyadchat/messag.html',{"logged_user":logged_user,"ami":ami,"moi_messages":moi_messages,"lui_messages":lui_messages})
 
 
 # Create your views here.

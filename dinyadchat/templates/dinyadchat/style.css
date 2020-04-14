@@ -2,7 +2,7 @@ body {
 	color: black;
 	background-color: white;
 	text-align: center;
-	
+	font-family: 'Lobster';
 }
 
 ul#personnes{
@@ -34,7 +34,6 @@ header{
 	margin-right: 200px;
 	margin-left: 200px;
 	border-radius:8px;
-	font-family: 'Lobster';
 }
 
 p {
@@ -57,7 +56,6 @@ fieldset{
 	margin-right: 200px;
 	margin-left: 200px;
 	border-radius: 4px;
-	border: solid black;
 }
 
 

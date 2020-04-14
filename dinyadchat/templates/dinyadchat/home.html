@@ -15,21 +15,23 @@
 			<h1>Bienvenu Sur DinyadChat</h1>
 			<h2>{{ logged_user.nom }} {{ logged_user.prenom }}</h2>
 		</header>
-		<fieldset>
-		</fieldset>	
+		<fieldset id="home">
 		<section>
-			<ul id="mess">
+			
 				<h3>Mes messages</h3>
 				{% for mess in messages %}
-				<li>
-					{{mess.auteur.nom}} {{mess.auteur.prenom}}</br>
-					<a href="/messag?ami={{ mess.auteur.id }}" id="am_ms">{{ mess.contenu }} </a>
-				</li>
+				<p id="am_ms">
+					<strong >{{mess.auteur.nom}} {{mess.auteur.prenom}}</br>
+					<a href="/messag?ami={{ mess.auteur.id }}"id="am_ms" >{{ mess.contenu }} </a></strong>
+				</p>
 				{% endfor %}
-			</ul>
+			
 			
 		</section>
+		</br></br>
 		<section>
+			
+			
 			<ul id="amis">
 				<h3>Mes amis</h3>
 				{% for ami in logged_user.amis.all %}
@@ -39,17 +41,20 @@
 				{% endfor %}
 			</ul>
 		</section>
+		</br></br>
 		<section>
 			<ul id="personnes">
 				<h3>Sont sur DinyadChat...</h3>
 				{% for pers in personnes%}
 					{% if pers not in logged_user.amis.all and pers != logged_user %}
 						<li>
-							{{ pers.nom }} {{ pers.prenom }}{{j}} <a href="/home?ajouter={{ pers.id }}" id="ajouter">Ajouter</a>
+							{{ pers.nom }} {{ pers.prenom }}{{j}} .......<a href="/home?ajouter={{ pers.id }}" id="ajouter">Ajouter</a>
 						</li>
 					{% endif %}
 				{% endfor %}
 			</ul>
 		</section>
+		</fieldset>	
+
 	</body> 
 </html> 

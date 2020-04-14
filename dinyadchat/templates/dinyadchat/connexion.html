@@ -10,16 +10,18 @@
 		<link rel="stylesheet"  href="{% static 'css/style.css' %}">
 	</head> 
 	<body> 
+		<header>
 		<h1>Bienvenu Sur DinyadChat</h1>
 		<h2>Connexion</h2> 
+		</header>
 		<fieldset>
-		</fieldset>	
+			
 		<form method="post" action="connexion">
 			{{ form.as_p }}
 			<p>
 				<input type="submit" name="ok" value="Se connecter">
 			</P>
 		</for> 	
-		
+		</fieldset>
 	</body> 
 </htmh>
